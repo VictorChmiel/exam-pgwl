@@ -1,15 +1,19 @@
 package fr.emse.majeureinfo.springbootintro.model;
 
-import javax.persistence.Entity;
-
+//whole class imported
+import javax.persistence.*;
 @Entity
 @SuppressWarnings("serial")
 public class Robot {
 
+    @Id
+    @GeneratedValue
     private Long id;
 
+    @Column
     private Sensor sensor;
 
+    @Enumerated(EnumType.STRING)
     private Actuator actuator;
 
     public Robot(Sensor sensor, Actuator actuator) {

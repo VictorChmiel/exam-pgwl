@@ -9,6 +9,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//missing interfaces
+@RestController
+@Transactional
 public class RobotController {
 
     private final RobotDao robotDao;
@@ -25,6 +28,7 @@ public class RobotController {
                 .map(RobotDto::new)
                 .collect(Collectors.toList());
     }
+
 
     @GetMapping(value={"/{robotId}","/{robotId}/context"})
     public RobotDto get(@PathVariable("robotId") Long robotId) {
